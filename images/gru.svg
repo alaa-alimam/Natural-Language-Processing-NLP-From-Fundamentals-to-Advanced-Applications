@@ -1,0 +1,110 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="790" viewBox="0 0 1200 790">
+<defs>
+  <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+    <path d="M0 0 L10 5 L0 10 Z" fill="#566573"></path>
+  </marker>
+  <style>
+    .box{stroke-width:2}
+    .label{font:bold 17px Arial;fill:#263238;text-anchor:middle}
+    .sub{font:14px Arial;fill:#566573;text-anchor:middle}
+    .small{font:13px Arial;fill:#566573;text-anchor:middle}
+    .line{fill:none;stroke:#566573;stroke-width:2.2;marker-end:url(#arrow)}
+    .red{fill:none;stroke:#C0392B;stroke-width:2.2;marker-end:url(#arrow)}
+    .gold{fill:none;stroke:#B7950B;stroke-width:2.2;marker-end:url(#arrow)}
+    .math{font:bold 20px Arial;fill:#34495E;text-anchor:middle}
+  </style>
+</defs>
+
+<rect width="1200" height="790" rx="18" fill="#FFFFFF"></rect>
+
+<text x="600" y="48" font-family="Arial" font-size="30" font-weight="bold" text-anchor="middle" fill="#243447">Inside a GRU Cell</text>
+<text x="600" y="78" font-family="Arial" font-size="16" text-anchor="middle" fill="#667788">Reset Gate • Update Gate • Candidate Hidden State</text>
+
+<!-- Inputs -->
+<rect x="35" y="175" width="165" height="75" rx="13" fill="#D6EAF8" stroke="#2471A3" class="box"></rect>
+<text x="117" y="204" class="label">Previous State</text>
+<text x="117" y="229" class="sub">h(t-1)</text>
+
+<rect x="35" y="490" width="165" height="75" rx="13" fill="#D5F5E3" stroke="#239B56" class="box"></rect>
+<text x="117" y="519" class="label">Current Input</text>
+<text x="117" y="544" class="sub">x(t)</text>
+
+<!-- Gates -->
+<rect x="280" y="125" width="190" height="80" rx="13" fill="#FADBD8" stroke="#C0392B" class="box"></rect>
+<text x="375" y="158" class="label">Reset Gate (r)</text>
+<text x="375" y="183" class="sub">Sigmoid</text>
+
+<rect x="280" y="315" width="190" height="80" rx="13" fill="#FCF3CF" stroke="#B7950B" class="box"></rect>
+<text x="375" y="348" class="label">Update Gate (z)</text>
+<text x="375" y="373" class="sub">Sigmoid</text>
+
+<!-- Candidate -->
+<rect x="625" y="120" width="205" height="90" rx="13" fill="#E8DAEF" stroke="#884EA0" class="box"></rect>
+<text x="727" y="153" class="label">Candidate State</text>
+<text x="727" y="179" class="label">h~(t)</text>
+<text x="727" y="198" class="small">tanh activation</text>
+
+<!-- Reset multiplication -->
+<circle cx="545" cy="165" r="23" fill="#FDEDEC" stroke="#C0392B" stroke-width="2"></circle>
+<text x="545" y="172" class="label">×</text>
+<text x="545" y="205" class="small">Element-wise</text>
+<text x="545" y="221" class="small">multiply</text>
+
+<!-- Update complement -->
+<rect x="625" y="330" width="150" height="65" rx="12" fill="#FCF3CF" stroke="#B7950B" class="box"></rect>
+<text x="700" y="357" class="label">1 − z(t)</text>
+<text x="700" y="380" class="small">Complement</text>
+
+<!-- Multipliers -->
+<circle cx="955" cy="165" r="23" fill="#FCF3CF" stroke="#B7950B" stroke-width="2"></circle>
+<text x="955" y="172" class="label">×</text>
+<text x="875" y="145" class="small">z(t)</text>
+
+<circle cx="955" cy="420" r="23" fill="#FCF3CF" stroke="#B7950B" stroke-width="2"></circle>
+<text x="955" y="427" class="label">×</text>
+
+<!-- Addition -->
+<circle cx="1080" cy="330" r="25" fill="#E8F8F5" stroke="#148F77" stroke-width="2.5"></circle>
+<text x="1080" y="338" font-family="Arial" font-size="27" font-weight="bold" text-anchor="middle" fill="#117864">+</text>
+
+<!-- New hidden state -->
+<rect x="1000" y="485" width="165" height="75" rx="13" fill="#D6EAF8" stroke="#2471A3" class="box"></rect>
+<text x="1082" y="515" class="label">New State</text>
+<text x="1082" y="540" class="sub">h(t)</text>
+
+<!-- Input connections -->
+<path d="M200 212 H235 V165 H280" class="line"></path>
+<path d="M200 212 H235 V355 H280" class="line"></path>
+<path d="M200 527 H250 V165 H280" class="line"></path>
+<path d="M200 527 H250 V355 H280" class="line"></path>
+
+<!-- Reset gate connections -->
+<path d="M470 165 H522" class="red"></path>
+<path d="M235 212 V260 H545 V188" class="red"></path>
+<path d="M568 165 H625" class="red"></path>
+<path d="M250 527 V285 H727 V210" class="line"></path>
+<text x="390" y="253" class="small">h(t-1)</text>
+<text x="490" y="277" class="small">Input contribution</text>
+
+<!-- Update gate connections -->
+<path d="M470 355 H522" class="gold"></path>
+<text x="545" y="395" class="small">Update gate</text>
+<path d="M568 355 H900 V165 H932" class="gold"></path>
+<path d="M830 165 H932" class="line"></path>
+
+<!-- Previous state weighted path -->
+<path d="M200 212 H220 V450 H850 V420 H932" class="line"></path>
+<path d="M775 362 H850 V420 H932" class="gold"></path>
+
+<!-- Multiplication outputs to addition -->
+<path d="M978 165 H1030 V305 H1060" class="line"></path>
+<path d="M978 420 H1030 V355 H1060" class="line"></path>
+<path d="M1080 355 V485" class="line"></path>
+
+<!-- Formula -->
+<rect x="125" y="625" width="950" height="90" rx="14" fill="#F4F6F7" stroke="#D5D8DC" stroke-width="1.5"></rect>
+<text x="600" y="663" class="math">h(t) = (1 − z(t)) × h(t−1) + z(t) × h~(t)</text>
+<text x="600" y="690" class="sub">The new hidden state combines previous information with the candidate state.</text>
+<text x="600" y="755" font-family="Arial" font-size="13" text-anchor="middle" fill="#85929E">GRU — Gated Recurrent Unit</text>
+</svg>

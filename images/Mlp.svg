@@ -1,0 +1,146 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 1900 1200" style="background:white;font-family:Arial,sans-serif">
+
+<defs>
+  <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+    <path d="M0,0 L0,6 L9,3 z" fill="#566573"></path>
+  </marker>
+</defs>
+
+<!-- TITLE -->
+<text x="950" y="80" text-anchor="middle" font-size="42" font-weight="bold" fill="#17202A">MLP Neural Network Architecture</text>
+<text x="950" y="135" text-anchor="middle" font-size="24" fill="#566573">Fully Connected Layers with Dropout Regularization</text>
+
+<!-- CONNECTION ARROWS -->
+<g stroke="#566573" stroke-width="3" fill="none" marker-end="url(#arrow)">
+  <path d="M155 600 H235"></path>
+  <path d="M365 600 H425"></path>
+  <path d="M555 600 H635"></path>
+  <path d="M765 600 H825"></path>
+  <path d="M955 600 H1035"></path>
+  <path d="M1165 600 H1225"></path>
+  <path d="M1355 600 H1435"></path>
+  <path d="M1565 600 H1655"></path>
+</g>
+
+<!-- INPUT LAYER -->
+<g fill="#D6EAF8" stroke="#2471A3" stroke-width="3">
+  <circle cx="90" cy="370" r="16"></circle>
+  <circle cx="90" cy="447" r="16"></circle>
+  <circle cx="90" cy="523" r="16"></circle>
+  <circle cx="90" cy="600" r="16"></circle>
+  <circle cx="90" cy="677" r="16"></circle>
+  <circle cx="90" cy="753" r="16"></circle>
+  <circle cx="90" cy="830" r="16"></circle>
+</g>
+<text x="90" y="290" text-anchor="middle" font-size="25" font-weight="bold" fill="#2471A3">INPUT</text>
+<text x="90" y="900" text-anchor="middle" font-size="21" font-weight="bold">200 Neurons</text>
+
+<!-- DENSE 1 -->
+<g fill="#D5F5E3" stroke="#239B56" stroke-width="3">
+  <circle cx="300" cy="370" r="16"></circle>
+  <circle cx="300" cy="447" r="16"></circle>
+  <circle cx="300" cy="523" r="16"></circle>
+  <circle cx="300" cy="600" r="16"></circle>
+  <circle cx="300" cy="677" r="16"></circle>
+  <circle cx="300" cy="753" r="16"></circle>
+  <circle cx="300" cy="830" r="16"></circle>
+</g>
+<text x="300" y="290" text-anchor="middle" font-size="25" font-weight="bold" fill="#239B56">DENSE 1</text>
+<text x="300" y="600" text-anchor="middle" font-size="38" font-weight="bold" fill="#239B56">⋮</text>
+<text x="300" y="900" text-anchor="middle" font-size="21" font-weight="bold">128 Neurons</text>
+<text x="300" y="945" text-anchor="middle" font-size="19" fill="#555">Activation: ReLU</text>
+
+<!-- DROPOUT 1 -->
+<rect x="427" y="490" width="126" height="220" rx="15" fill="#FDEDEC" stroke="#CB4335" stroke-width="3"></rect>
+<text x="490" y="570" text-anchor="middle" font-size="22" font-weight="bold" fill="#922B21">Dropout</text>
+<text x="490" y="635" text-anchor="middle" font-size="19" fill="#922B21">Rate = 0.2</text>
+<text x="490" y="680" text-anchor="middle" font-size="21" fill="#CB4335">× × ×</text>
+
+<!-- DENSE 2 -->
+<g fill="#D5F5E3" stroke="#239B56" stroke-width="3">
+  <circle cx="700" cy="370" r="16"></circle>
+  <circle cx="700" cy="447" r="16"></circle>
+  <circle cx="700" cy="523" r="16"></circle>
+  <circle cx="700" cy="600" r="16"></circle>
+  <circle cx="700" cy="677" r="16"></circle>
+  <circle cx="700" cy="753" r="16"></circle>
+  <circle cx="700" cy="830" r="16"></circle>
+</g>
+<text x="700" y="290" text-anchor="middle" font-size="25" font-weight="bold" fill="#239B56">DENSE 2</text>
+<text x="700" y="600" text-anchor="middle" font-size="38" font-weight="bold" fill="#239B56">⋮</text>
+<text x="700" y="900" text-anchor="middle" font-size="21" font-weight="bold">256 Neurons</text>
+<text x="700" y="945" text-anchor="middle" font-size="19" fill="#555">Activation: ReLU</text>
+
+<!-- DROPOUT 2 -->
+<rect x="827" y="490" width="126" height="220" rx="15" fill="#FDEDEC" stroke="#CB4335" stroke-width="3"></rect>
+<text x="890" y="570" text-anchor="middle" font-size="22" font-weight="bold" fill="#922B21">Dropout</text>
+<text x="890" y="635" text-anchor="middle" font-size="19" fill="#922B21">Rate = 0.3</text>
+<text x="890" y="680" text-anchor="middle" font-size="21" fill="#CB4335">× × ×</text>
+
+<!-- DENSE 3 -->
+<g fill="#D5F5E3" stroke="#239B56" stroke-width="3">
+  <circle cx="1100" cy="370" r="16"></circle>
+  <circle cx="1100" cy="447" r="16"></circle>
+  <circle cx="1100" cy="523" r="16"></circle>
+  <circle cx="1100" cy="600" r="16"></circle>
+  <circle cx="1100" cy="677" r="16"></circle>
+  <circle cx="1100" cy="753" r="16"></circle>
+  <circle cx="1100" cy="830" r="16"></circle>
+</g>
+<text x="1100" y="290" text-anchor="middle" font-size="25" font-weight="bold" fill="#239B56">DENSE 3</text>
+<text x="1100" y="600" text-anchor="middle" font-size="38" font-weight="bold" fill="#239B56">⋮</text>
+<text x="1100" y="900" text-anchor="middle" font-size="21" font-weight="bold">64 Neurons</text>
+<text x="1100" y="945" text-anchor="middle" font-size="19" fill="#555">Activation: ReLU</text>
+
+<!-- DROPOUT 3 -->
+<rect x="1227" y="490" width="126" height="220" rx="15" fill="#FDEDEC" stroke="#CB4335" stroke-width="3"></rect>
+<text x="1290" y="570" text-anchor="middle" font-size="22" font-weight="bold" fill="#922B21">Dropout</text>
+<text x="1290" y="635" text-anchor="middle" font-size="19" fill="#922B21">Rate = 0.2</text>
+<text x="1290" y="680" text-anchor="middle" font-size="21" fill="#CB4335">× × ×</text>
+
+<!-- DENSE 4 -->
+<g fill="#D5F5E3" stroke="#239B56" stroke-width="3">
+  <circle cx="1500" cy="370" r="16"></circle>
+  <circle cx="1500" cy="447" r="16"></circle>
+  <circle cx="1500" cy="523" r="16"></circle>
+  <circle cx="1500" cy="600" r="16"></circle>
+  <circle cx="1500" cy="677" r="16"></circle>
+  <circle cx="1500" cy="753" r="16"></circle>
+  <circle cx="1500" cy="830" r="16"></circle>
+</g>
+<text x="1500" y="290" text-anchor="middle" font-size="25" font-weight="bold" fill="#239B56">DENSE 4</text>
+<text x="1500" y="600" text-anchor="middle" font-size="38" font-weight="bold" fill="#239B56">⋮</text>
+<text x="1500" y="900" text-anchor="middle" font-size="21" font-weight="bold">16 Neurons</text>
+<text x="1500" y="945" text-anchor="middle" font-size="19" fill="#555">Activation: ReLU</text>
+
+<!-- OUTPUT -->
+<circle cx="1720" cy="600" r="18" fill="#F5B7B1" stroke="#C0392B" stroke-width="3"></circle>
+<text x="1720" y="290" text-anchor="middle" font-size="25" font-weight="bold" fill="#C0392B">OUTPUT</text>
+<text x="1720" y="900" text-anchor="middle" font-size="21" font-weight="bold">1 Neuron</text>
+<text x="1720" y="945" text-anchor="middle" font-size="19" fill="#555">Activation: Sigmoid</text>
+
+<!-- BOTTOM SUMMARY -->
+<text x="950" y="1055" text-anchor="middle" font-size="23" font-weight="bold" fill="#2C3E50">
+200 → 128 → Dropout(0.2) → 256 → Dropout(0.3) → 64 → Dropout(0.2) → 16 → 1
+</text>
+<text x="950" y="1110" text-anchor="middle" font-size="20" fill="#566573">
+ReLU Activation in Hidden Layers | Sigmoid Activation in Output Layer
+</text>
+
+<!-- LEGEND -->
+<g font-size="19">
+  <circle cx="520" cy="1170" r="12" fill="#D6EAF8" stroke="#2471A3" stroke-width="2"></circle>
+  <text x="545" y="1177">Input</text>
+
+  <circle cx="750" cy="1170" r="12" fill="#D5F5E3" stroke="#239B56" stroke-width="2"></circle>
+  <text x="775" y="1177">Dense</text>
+
+  <circle cx="980" cy="1170" r="12" fill="#FDEDEC" stroke="#CB4335" stroke-width="2"></circle>
+  <text x="1005" y="1177">Dropout</text>
+
+  <circle cx="1210" cy="1170" r="12" fill="#F5B7B1" stroke="#C0392B" stroke-width="2"></circle>
+  <text x="1235" y="1177">Output</text>
+</g>
+
+</svg>

@@ -1,0 +1,178 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 1900 1100" style="background:white;font-family:Arial,sans-serif">
+
+<defs>
+  <marker id="rnn-arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+    <path d="M0,0 L0,6 L9,3 Z" fill="#34495E"></path>
+  </marker>
+  <marker id="gold-arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+    <path d="M0,0 L0,6 L9,3 Z" fill="#B7950B"></path>
+  </marker>
+  <marker id="red-arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+    <path d="M0,0 L0,6 L9,3 Z" fill="#C0392B"></path>
+  </marker>
+  <marker id="blue-arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+    <path d="M0,0 L0,6 L9,3 Z" fill="#2471A3"></path>
+  </marker>
+  <marker id="green-arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+    <path d="M0,0 L0,6 L9,3 Z" fill="#239B56"></path>
+  </marker>
+</defs>
+
+<!-- TITLE -->
+<text x="950" y="55" text-anchor="middle" font-size="38" font-weight="bold" fill="#17202A">SimpleRNN Architecture</text>
+<text x="950" y="105" text-anchor="middle" font-size="21" fill="#666">Unrolled RNN Across Time Steps</text>
+
+<!-- INPUT SEQUENCE -->
+<rect x="50" y="335" width="200" height="85" rx="12" fill="#D6EAF8" stroke="#2471A3" stroke-width="2.5"></rect>
+<text x="150" y="370" text-anchor="middle" font-size="19" font-weight="bold">Input Sequence</text>
+<text x="150" y="398" text-anchor="middle" font-size="18">(200 Tokens)</text>
+
+<!-- EMBEDDING -->
+<rect x="50" y="505" width="200" height="85" rx="12" fill="#D5F5E3" stroke="#239B56" stroke-width="2.5"></rect>
+<text x="150" y="540" text-anchor="middle" font-size="19" font-weight="bold">Embedding Layer</text>
+<text x="150" y="568" text-anchor="middle" font-size="18">10,000 × 64</text>
+
+<path d="M150 420 V500" fill="none" stroke="#34495E" stroke-width="2.5" marker-end="url(#rnn-arrow)"></path>
+
+<text x="150" y="635" text-anchor="middle" font-size="17" fill="#239B56">Output: (200, 64)</text>
+
+<!-- EMBEDDING CONNECTION -->
+<path d="M250 548 H310" fill="none" stroke="#239B56" stroke-width="2.5" marker-end="url(#green-arrow)"></path>
+<text x="280" y="590" text-anchor="middle" font-size="15" fill="#239B56">Sequence</text>
+<text x="280" y="610" text-anchor="middle" font-size="15" fill="#239B56">Vectors</text>
+
+<!-- RNN BOUNDARY -->
+<rect x="330" y="290" width="940" height="330" rx="18" fill="#F8FDF8" stroke="#239B56" stroke-width="3" stroke-dasharray="12 7"></rect>
+<text x="800" y="335" text-anchor="middle" font-size="25" font-weight="bold" fill="#239B56">SimpleRNN Layer — 128 Units</text>
+
+<!-- SHARED WEIGHTS -->
+<rect x="630" y="145" width="350" height="65" rx="12" fill="#F4ECF7" stroke="#884EA0" stroke-width="2.5"></rect>
+<text x="805" y="185" text-anchor="middle" font-size="19" font-weight="bold" fill="#512E5F">Same Weights Shared Across All Time Steps</text>
+<path d="M805 210 V275" fill="none" stroke="#884EA0" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#rnn-arrow)"></path>
+
+<!-- RECURRENT CELLS -->
+<g fill="#DDF5E3" stroke="#239B56" stroke-width="2.5">
+  <rect x="410" y="400" width="135" height="100" rx="12"></rect>
+  <rect x="620" y="400" width="135" height="100" rx="12"></rect>
+  <rect x="830" y="400" width="135" height="100" rx="12"></rect>
+  <rect x="1100" y="400" width="135" height="100" rx="12"></rect>
+</g>
+
+<g text-anchor="middle" font-size="19" font-weight="bold" fill="#17202A">
+  <text x="477" y="442">RNN Cell</text>
+  <text x="477" y="470">128 Units</text>
+
+  <text x="687" y="442">RNN Cell</text>
+  <text x="687" y="470">128 Units</text>
+
+  <text x="897" y="442">RNN Cell</text>
+  <text x="897" y="470">128 Units</text>
+
+  <text x="1167" y="442">RNN Cell</text>
+  <text x="1167" y="470">128 Units</text>
+</g>
+
+<!-- TIME LABELS -->
+<g text-anchor="middle" font-size="17" fill="#555">
+  <text x="477" y="535">t = 1</text>
+  <text x="687" y="535">t = 2</text>
+  <text x="897" y="535">t = 3</text>
+  <text x="1167" y="535">t = 200</text>
+</g>
+
+<!-- INITIAL HIDDEN STATE -->
+<circle cx="365" cy="450" r="32" fill="#FCF3CF" stroke="#B7950B" stroke-width="2.5"></circle>
+<text x="365" y="457" text-anchor="middle" font-size="21" font-weight="bold">h₀</text>
+<path d="M397 450 H405" fill="none" stroke="#B7950B" stroke-width="3" marker-end="url(#gold-arrow)"></path>
+
+<!-- RECURRENT CONNECTIONS -->
+<g fill="none" stroke="#B7950B" stroke-width="3" marker-end="url(#gold-arrow)">
+  <path d="M545 450 H615"></path>
+  <path d="M755 450 H825"></path>
+  <path d="M965 450 H1095"></path>
+</g>
+
+<!-- HIDDEN STATE LABELS -->
+<g text-anchor="middle" font-size="19" font-weight="bold" fill="#9A7D0A">
+  <text x="580" y="425">h₁</text>
+  <text x="790" y="425">h₂</text>
+  <text x="1030" y="425">...</text>
+  <text x="1250" y="425">h₂₀₀</text>
+</g>
+
+<!-- INPUT VECTORS -->
+<g fill="#FDEDEC" stroke="#C0392B" stroke-width="2.5">
+  <circle cx="477" cy="730" r="31"></circle>
+  <circle cx="687" cy="730" r="31"></circle>
+  <circle cx="897" cy="730" r="31"></circle>
+  <circle cx="1167" cy="730" r="31"></circle>
+</g>
+
+<g text-anchor="middle" font-size="19" font-weight="bold">
+  <text x="477" y="737">x₁</text>
+  <text x="687" y="737">x₂</text>
+  <text x="897" y="737">x₃</text>
+  <text x="1167" y="737">x₂₀₀</text>
+</g>
+
+<!-- INPUT TO RNN -->
+<g fill="none" stroke="#C0392B" stroke-width="2.5" marker-end="url(#red-arrow)">
+  <path d="M477 695 V505"></path>
+  <path d="M687 695 V505"></path>
+  <path d="M897 695 V505"></path>
+  <path d="M1167 695 V505"></path>
+</g>
+
+<text x="1030" y="738" text-anchor="middle" font-size="28" font-weight="bold" fill="#555">...</text>
+
+<!-- FINAL HIDDEN STATE -->
+<rect x="1340" y="395" width="180" height="110" rx="12" fill="#D6EAF8" stroke="#2471A3" stroke-width="2.5"></rect>
+<text x="1430" y="440" text-anchor="middle" font-size="19" font-weight="bold">Final Hidden State</text>
+<text x="1430" y="475" text-anchor="middle" font-size="19">128 Values</text>
+
+<path d="M1270 450 H1335" fill="none" stroke="#2471A3" stroke-width="3" marker-end="url(#blue-arrow)"></path>
+
+<!-- CLASSIFICATION LAYERS -->
+<rect x="1600" y="270" width="200" height="80" rx="12" fill="#FDEDEC" stroke="#CB4335" stroke-width="2.5"></rect>
+<text x="1700" y="305" text-anchor="middle" font-size="19" font-weight="bold">Dropout</text>
+<text x="1700" y="332" text-anchor="middle" font-size="18">0.2</text>
+
+<rect x="1600" y="490" width="200" height="80" rx="12" fill="#D5F5E3" stroke="#239B56" stroke-width="2.5"></rect>
+<text x="1700" y="523" text-anchor="middle" font-size="19" font-weight="bold">Dense (16)</text>
+<text x="1700" y="550" text-anchor="middle" font-size="18">ReLU</text>
+
+<rect x="1600" y="710" width="200" height="80" rx="12" fill="#F5B7B1" stroke="#C0392B" stroke-width="2.5"></rect>
+<text x="1700" y="743" text-anchor="middle" font-size="19" font-weight="bold">Dense (1)</text>
+<text x="1700" y="770" text-anchor="middle" font-size="18">Sigmoid</text>
+
+<!-- CLASSIFICATION FLOW -->
+<path d="M1520 450 L1560 450 L1595 310" fill="none" stroke="#2471A3" stroke-width="2.5" marker-end="url(#blue-arrow)"></path>
+<path d="M1700 350 V485" fill="none" stroke="#34495E" stroke-width="2.5" marker-end="url(#rnn-arrow)"></path>
+<path d="M1700 570 V705" fill="none" stroke="#34495E" stroke-width="2.5" marker-end="url(#rnn-arrow)"></path>
+
+<text x="1700" y="835" text-anchor="middle" font-size="20" font-weight="bold" fill="#922B21">Prediction: 0 – 1</text>
+
+<!-- FOOTER -->
+<text x="900" y="940" text-anchor="middle" font-size="23" font-weight="bold" fill="#34495E">Input → Embedding → SimpleRNN → Dropout → Dense → Sigmoid</text>
+<text x="900" y="985" text-anchor="middle" font-size="19" fill="#666">Only the final hidden state is passed to the classification layers.</text>
+
+<!-- LEGEND -->
+<g font-size="17">
+  <rect x="430" y="1030" width="24" height="24" rx="5" fill="#D6EAF8" stroke="#2471A3" stroke-width="2"></rect>
+  <text x="465" y="1049">Input</text>
+
+  <rect x="600" y="1030" width="24" height="24" rx="5" fill="#D5F5E3" stroke="#239B56" stroke-width="2"></rect>
+  <text x="635" y="1049">RNN / Embedding</text>
+
+  <rect x="850" y="1030" width="24" height="24" rx="5" fill="#FCF3CF" stroke="#B7950B" stroke-width="2"></rect>
+  <text x="885" y="1049">Hidden State</text>
+
+  <rect x="1080" y="1030" width="24" height="24" rx="5" fill="#FDEDEC" stroke="#CB4335" stroke-width="2"></rect>
+  <text x="1115" y="1049">Dropout / Input</text>
+
+  <rect x="1350" y="1030" width="24" height="24" rx="5" fill="#F5B7B1" stroke="#C0392B" stroke-width="2"></rect>
+  <text x="1385" y="1049">Output</text>
+</g>
+
+</svg>

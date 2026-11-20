@@ -1,0 +1,146 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+<defs>
+  <marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto">
+    <path d="M0 0 L8 4 L0 8 Z" fill="#34495E"></path>
+  </marker>
+  <marker id="redArrow" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto">
+    <path d="M0 0 L8 4 L0 8 Z" fill="#C0392B"></path>
+  </marker>
+  <style>
+    .title{font:bold 25px Arial;fill:#243447;text-anchor:middle}
+    .section{font:bold 19px Arial;text-anchor:middle}
+    .label{font:bold 14px Arial;fill:#263238;text-anchor:middle}
+    .small{font:12px Arial;fill:#566573;text-anchor:middle}
+    .arrow{fill:none;stroke:#34495E;stroke-width:1.8;marker-end:url(#arrow)}
+    .red{fill:none;stroke:#C0392B;stroke-width:2;marker-end:url(#redArrow)}
+  </style>
+</defs>
+
+<rect width="1200" height="900" rx="16" fill="#FFFFFF"></rect>
+
+<!-- Title -->
+<text x="600" y="42" class="title">Sequence to Sequence (Seq2Seq) Architecture</text>
+
+<!-- Encoder -->
+<text x="600" y="91" class="section" fill="#2471A3">ENCODER</text>
+<text x="50" y="142" class="label" text-anchor="start">Input Sequence</text>
+
+<!-- Encoder words -->
+<g fill="#D6EAF8" stroke="#2471A3" stroke-width="1.6">
+  <rect x="130" y="115" width="150" height="52" rx="10"></rect>
+  <rect x="370" y="115" width="150" height="52" rx="10"></rect>
+  <rect x="610" y="115" width="150" height="52" rx="10"></rect>
+  <rect x="850" y="115" width="150" height="52" rx="10"></rect>
+</g>
+<g class="label">
+  <text x="205" y="147">How</text>
+  <text x="445" y="147">are</text>
+  <text x="685" y="147">you</text>
+  <text x="925" y="147">?</text>
+</g>
+
+<!-- Encoder embeddings -->
+<g fill="#D5F5E3" stroke="#239B56" stroke-width="1.6">
+  <rect x="130" y="225" width="150" height="48" rx="9"></rect>
+  <rect x="370" y="225" width="150" height="48" rx="9"></rect>
+  <rect x="610" y="225" width="150" height="48" rx="9"></rect>
+  <rect x="850" y="225" width="150" height="48" rx="9"></rect>
+</g>
+<g class="label">
+  <text x="205" y="254">Embedding</text>
+  <text x="445" y="254">Embedding</text>
+  <text x="685" y="254">Embedding</text>
+  <text x="925" y="254">Embedding</text>
+</g>
+
+<!-- Encoder LSTM -->
+<g fill="#FCF3CF" stroke="#B7950B" stroke-width="1.6">
+  <rect x="130" y="340" width="150" height="65" rx="10"></rect>
+  <rect x="370" y="340" width="150" height="65" rx="10"></rect>
+  <rect x="610" y="340" width="150" height="65" rx="10"></rect>
+  <rect x="850" y="340" width="150" height="65" rx="10"></rect>
+</g>
+<g class="label">
+  <text x="205" y="378">LSTM Cell</text>
+  <text x="445" y="378">LSTM Cell</text>
+  <text x="685" y="378">LSTM Cell</text>
+  <text x="925" y="378">LSTM Cell</text>
+</g>
+
+<!-- Encoder arrows -->
+<g class="arrow">
+  <path d="M205 167 V220"></path>
+  <path d="M445 167 V220"></path>
+  <path d="M685 167 V220"></path>
+  <path d="M925 167 V220"></path>
+  <path d="M205 273 V335"></path>
+  <path d="M445 273 V335"></path>
+  <path d="M685 273 V335"></path>
+  <path d="M925 273 V335"></path>
+  <path d="M280 372 H365"></path>
+  <path d="M520 372 H605"></path>
+  <path d="M760 372 H845"></path>
+</g>
+
+<text x="600" y="438" class="small">The Encoder reads the input sequence and captures its information.</text>
+
+<!-- Context vector -->
+<path d="M925 405 C925 460 790 475 790 505" class="red"></path>
+<rect x="310" y="490" width="580" height="75" rx="13" fill="#FADBD8" stroke="#C0392B" stroke-width="2"></rect>
+<text x="600" y="520" class="label">Context Vector</text>
+<text x="600" y="544" class="small">Final Hidden State (h) + Cell State (c)</text>
+<text x="600" y="590" class="small" fill="#C0392B">Encoder information is passed to the Decoder</text>
+
+<!-- Decoder -->
+<text x="600" y="635" class="section" fill="#884EA0">DECODER</text>
+
+<!-- Decoder inputs -->
+<g fill="#E8DAEF" stroke="#884EA0" stroke-width="1.6">
+  <rect x="60" y="665" width="235" height="48" rx="9"></rect>
+  <rect x="330" y="665" width="235" height="48" rx="9"></rect>
+  <rect x="600" y="665" width="235" height="48" rx="9"></rect>
+  <rect x="870" y="665" width="235" height="48" rx="9"></rect>
+</g>
+<g class="label">
+  <text x="177" y="695">&lt;START&gt;</text>
+  <text x="447" y="695">Comment</text>
+  <text x="717" y="695">allez-vous</text>
+  <text x="987" y="695">?</text>
+</g>
+
+<!-- Decoder embeddings -->
+<g fill="#D5F5E3" stroke="#239B56" stroke-width="1.6">
+  <rect x="60" y="740" width="235" height="42" rx="9"></rect>
+  <rect x="330" y="740" width="235" height="42" rx="9"></rect>
+  <rect x="600" y="740" width="235" height="42" rx="9"></rect>
+  <rect x="870" y="740" width="235" height="42" rx="9"></rect>
+</g>
+<g class="label">
+  <text x="177" y="766">Embedding</text>
+  <text x="447" y="766">Embedding</text>
+  <text x="717" y="766">Embedding</text>
+  <text x="987" y="766">Embedding</text>
+</g>
+
+<!-- Decoder output note -->
+<text x="600" y="835" class="small">Each Decoder step predicts the next word autoregressively.</text>
+<text x="600" y="865" class="small">Seq2Seq — Encoder → Context Vector → Decoder</text>
+
+<!-- Decoder input arrows -->
+<g class="arrow">
+  <path d="M177 713 V735"></path>
+  <path d="M447 713 V735"></path>
+  <path d="M717 713 V735"></path>
+  <path d="M987 713 V735"></path>
+</g>
+
+<!-- Context to decoder -->
+<path d="M310 530 C160 550 30 590 30 680 H55" class="red"></path>
+<text x="105" y="612" class="small" fill="#C0392B">Initial state</text>
+
+<!-- Decoder recurrent flow indication -->
+<path d="M295 690 H325" class="arrow"></path>
+<path d="M565 690 H595" class="arrow"></path>
+<path d="M835 690 H865" class="arrow"></path>
+</svg>

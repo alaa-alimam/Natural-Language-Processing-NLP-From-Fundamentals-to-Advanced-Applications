@@ -1,0 +1,235 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 2000 1300" style="background:white;font-family:Arial,sans-serif">
+
+<defs>
+  <marker id="la-gray" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0 L0 6 L9 3Z" fill="#566573"></path></marker>
+  <marker id="la-blue" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0 L0 6 L9 3Z" fill="#2471A3"></path></marker>
+  <marker id="la-green" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0 L0 6 L9 3Z" fill="#239B56"></path></marker>
+  <marker id="la-red" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0 L0 6 L9 3Z" fill="#C0392B"></path></marker>
+  <marker id="la-purple" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0 L0 6 L9 3Z" fill="#884EA0"></path></marker>
+  <marker id="la-yellow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0 L0 6 L9 3Z" fill="#B7950B"></path></marker>
+</defs>
+
+<!-- MAIN TITLE -->
+<text x="1000" y="55" text-anchor="middle" font-size="39" font-weight="bold" fill="#17202A">LSTM Neural Network Architecture</text>
+<text x="1000" y="100" text-anchor="middle" font-size="22" fill="#666666">Sequence Processing and Binary Classification</text>
+
+<!-- SECTION A -->
+<text x="50" y="165" font-size="25" font-weight="bold" fill="#273746">A. COMPLETE MODEL ARCHITECTURE</text>
+
+<!-- INPUT -->
+<rect x="50" y="225" width="180" height="100" rx="13" fill="#D6EAF8" stroke="#2471A3" stroke-width="3"></rect>
+<text x="140" y="265" text-anchor="middle" font-size="22" font-weight="bold">INPUT</text>
+<text x="140" y="298" text-anchor="middle" font-size="20">(200,)</text>
+
+<!-- EMBEDDING -->
+<rect x="290" y="225" width="200" height="100" rx="13" fill="#D5F5E3" stroke="#239B56" stroke-width="3"></rect>
+<text x="390" y="265" text-anchor="middle" font-size="21" font-weight="bold">EMBEDDING</text>
+<text x="390" y="298" text-anchor="middle" font-size="19">10,000 × 64</text>
+
+<path d="M230 275 H285" fill="none" stroke="#566573" stroke-width="2.5" marker-end="url(#la-gray)"></path>
+
+<!-- LSTM BOUNDARY -->
+<rect x="550" y="185" width="480" height="230" rx="17" fill="#FFFDF4" stroke="#B7950B" stroke-width="3" stroke-dasharray="12 7"></rect>
+<text x="790" y="225" text-anchor="middle" font-size="23" font-weight="bold" fill="#9A7D0A">LSTM LAYER - 64 UNITS</text>
+
+<!-- LSTM CELLS -->
+<g fill="#FCF3CF" stroke="#B7950B" stroke-width="2.5">
+  <rect x="590" y="265" width="100" height="75" rx="11"></rect>
+  <rect x="735" y="265" width="100" height="75" rx="11"></rect>
+  <rect x="880" y="265" width="100" height="75" rx="11"></rect>
+</g>
+<g text-anchor="middle" font-size="19" font-weight="bold">
+  <text x="640" y="310">LSTM</text>
+  <text x="785" y="310">LSTM</text>
+  <text x="930" y="310">LSTM</text>
+</g>
+
+<g fill="none" stroke="#B9770E" stroke-width="2.5" marker-end="url(#la-yellow)">
+  <path d="M690 302 H730"></path>
+  <path d="M835 302 H875"></path>
+</g>
+
+<g text-anchor="middle" font-size="17" fill="#7D6608">
+  <text x="640" y="365">t = 1</text>
+  <text x="785" y="365">t = 2</text>
+  <text x="930" y="365">t = ...</text>
+</g>
+
+<!-- CELL STATE -->
+<path d="M605 250 H970" stroke="#2471A3" stroke-width="3" fill="none"></path>
+<path d="M605 250 V260 M970 250 V260" stroke="#2471A3" stroke-width="2"></path>
+<text x="790" y="248" text-anchor="middle" font-size="16" fill="#2471A3">Cell State (C)</text>
+
+<text x="790" y="395" text-anchor="middle" font-size="18" fill="#555">Final Output: 64 Values</text>
+
+<path d="M490 275 H545" fill="none" stroke="#566573" stroke-width="2.5" marker-end="url(#la-gray)"></path>
+
+<!-- DROPOUT -->
+<rect x="1090" y="225" width="130" height="100" rx="13" fill="#FADBD8" stroke="#C0392B" stroke-width="3"></rect>
+<text x="1155" y="265" text-anchor="middle" font-size="21" font-weight="bold">Dropout</text>
+<text x="1155" y="298" text-anchor="middle" font-size="20">0.3</text>
+<path d="M1030 275 H1085" fill="none" stroke="#566573" stroke-width="2.5" marker-end="url(#la-gray)"></path>
+
+<!-- DENSE 1 -->
+<rect x="1290" y="225" width="135" height="100" rx="13" fill="#D5F5E3" stroke="#239B56" stroke-width="3"></rect>
+<text x="1357" y="265" text-anchor="middle" font-size="20" font-weight="bold">Dense (16)</text>
+<text x="1357" y="298" text-anchor="middle" font-size="20">ReLU</text>
+<path d="M1220 275 H1285" fill="none" stroke="#566573" stroke-width="2.5" marker-end="url(#la-gray)"></path>
+
+<!-- DENSE 2 -->
+<rect x="1460" y="225" width="135" height="100" rx="13" fill="#D5F5E3" stroke="#239B56" stroke-width="3"></rect>
+<text x="1527" y="265" text-anchor="middle" font-size="20" font-weight="bold">Dense (16)</text>
+<text x="1527" y="298" text-anchor="middle" font-size="20">ReLU</text>
+<path d="M1425 275 H1455" fill="none" stroke="#566573" stroke-width="2.5" marker-end="url(#la-gray)"></path>
+
+<!-- DROPOUT 2 -->
+<rect x="1630" y="225" width="125" height="100" rx="13" fill="#FADBD8" stroke="#C0392B" stroke-width="3"></rect>
+<text x="1692" y="265" text-anchor="middle" font-size="21" font-weight="bold">Dropout</text>
+<text x="1692" y="298" text-anchor="middle" font-size="20">0.2</text>
+<path d="M1595 275 H1625" fill="none" stroke="#566573" stroke-width="2.5" marker-end="url(#la-gray)"></path>
+
+<!-- OUTPUT -->
+<rect x="1790" y="225" width="160" height="100" rx="13" fill="#F5B7B1" stroke="#C0392B" stroke-width="3"></rect>
+<text x="1870" y="265" text-anchor="middle" font-size="20" font-weight="bold">Dense (1)</text>
+<text x="1870" y="298" text-anchor="middle" font-size="20">Sigmoid</text>
+<path d="M1755 275 H1785" fill="none" stroke="#566573" stroke-width="2.5" marker-end="url(#la-gray)"></path>
+<text x="1870" y="360" text-anchor="middle" font-size="18" fill="#C0392B">Probability: 0 to 1</text>
+
+<!-- DIVIDER -->
+<path d="M50 455 H1950" stroke="#D5D8DC" stroke-width="2"></path>
+
+<!-- SECTION B -->
+<text x="50" y="510" font-size="25" font-weight="bold" fill="#273746">B. INSIDE ONE LSTM CELL</text>
+<text x="50" y="550" font-size="19" fill="#666666">One LSTM cell receives the current input and previous states.</text>
+
+<!-- INPUTS -->
+<rect x="60" y="690" width="155" height="85" rx="12" fill="#D6EAF8" stroke="#2471A3" stroke-width="2.5"></rect>
+<text x="137" y="725" text-anchor="middle" font-size="21" font-weight="bold">xₜ</text>
+<text x="137" y="752" text-anchor="middle" font-size="17">Current Input</text>
+
+<rect x="60" y="830" width="155" height="85" rx="12" fill="#D6EAF8" stroke="#2471A3" stroke-width="2.5"></rect>
+<text x="137" y="865" text-anchor="middle" font-size="21" font-weight="bold">hₜ₋₁</text>
+<text x="137" y="892" text-anchor="middle" font-size="16">Previous Hidden</text>
+
+<rect x="60" y="570" width="155" height="75" rx="12" fill="#E8DAEF" stroke="#884EA0" stroke-width="2.5"></rect>
+<text x="137" y="600" text-anchor="middle" font-size="20" font-weight="bold">Cₜ₋₁</text>
+<text x="137" y="626" text-anchor="middle" font-size="16">Previous Memory</text>
+
+<!-- COMBINE -->
+<rect x="285" y="745" width="165" height="105" rx="12" fill="#EBF5FB" stroke="#2471A3" stroke-width="2.5"></rect>
+<text x="367" y="785" text-anchor="middle" font-size="20" font-weight="bold">Combine</text>
+<text x="367" y="818" text-anchor="middle" font-size="18">[xₜ, hₜ₋₁]</text>
+
+<path d="M215 730 L280 780" fill="none" stroke="#2471A3" stroke-width="2" marker-end="url(#la-blue)"></path>
+<path d="M215 872 L280 815" fill="none" stroke="#2471A3" stroke-width="2" marker-end="url(#la-blue)"></path>
+
+<!-- GATES -->
+<rect x="510" y="570" width="170" height="90" rx="12" fill="#FADBD8" stroke="#C0392B" stroke-width="2.5"></rect>
+<text x="595" y="608" text-anchor="middle" font-size="20" font-weight="bold">Forget Gate</text>
+<text x="595" y="637" text-anchor="middle" font-size="18">Sigmoid</text>
+
+<rect x="510" y="755" width="170" height="90" rx="12" fill="#D5F5E3" stroke="#239B56" stroke-width="2.5"></rect>
+<text x="595" y="793" text-anchor="middle" font-size="20" font-weight="bold">Input Gate</text>
+<text x="595" y="822" text-anchor="middle" font-size="18">Sigmoid</text>
+
+<rect x="510" y="935" width="170" height="90" rx="12" fill="#FCF3CF" stroke="#B7950B" stroke-width="2.5"></rect>
+<text x="595" y="973" text-anchor="middle" font-size="20" font-weight="bold">Candidate</text>
+<text x="595" y="1002" text-anchor="middle" font-size="18">Tanh</text>
+
+<rect x="850" y="755" width="170" height="90" rx="12" fill="#FADBD8" stroke="#C0392B" stroke-width="2.5"></rect>
+<text x="935" y="793" text-anchor="middle" font-size="20" font-weight="bold">Output Gate</text>
+<text x="935" y="822" text-anchor="middle" font-size="18">Sigmoid</text>
+
+<!-- COMBINE TO GATES -->
+<g fill="none" stroke="#566573" stroke-width="2.3" marker-end="url(#la-gray)">
+  <path d="M450 785 L505 615"></path>
+  <path d="M450 795 H505"></path>
+  <path d="M450 820 L505 980"></path>
+  <path d="M450 800 Q680 690 845 800"></path>
+</g>
+
+<!-- FORGET MULTIPLICATION -->
+<circle cx="760" cy="615" r="31" fill="#FDEDEC" stroke="#C0392B" stroke-width="2.5"></circle>
+<text x="760" y="624" text-anchor="middle" font-size="30" font-weight="bold">×</text>
+
+<path d="M680 615 H724" fill="none" stroke="#C0392B" stroke-width="2.5" marker-end="url(#la-red)"></path>
+<path d="M215 605 H715 Q745 605 745 615" fill="none" stroke="#884EA0" stroke-width="2.5" marker-end="url(#la-purple)"></path>
+
+<!-- INPUT MULTIPLICATION -->
+<circle cx="760" cy="900" r="31" fill="#E8F8F5" stroke="#239B56" stroke-width="2.5"></circle>
+<text x="760" y="909" text-anchor="middle" font-size="30" font-weight="bold">×</text>
+
+<path d="M680 800 L742 875" fill="none" stroke="#239B56" stroke-width="2.5" marker-end="url(#la-green)"></path>
+<path d="M680 980 L742 920" fill="none" stroke="#B7950B" stroke-width="2.5" marker-end="url(#la-yellow)"></path>
+
+<!-- ADDITION -->
+<circle cx="1080" cy="755" r="34" fill="#FCF3CF" stroke="#B7950B" stroke-width="2.5"></circle>
+<text x="1080" y="765" text-anchor="middle" font-size="31" font-weight="bold">+</text>
+
+<path d="M791 615 L1055 738" fill="none" stroke="#C0392B" stroke-width="2.5" marker-end="url(#la-red)"></path>
+<path d="M791 900 L1055 775" fill="none" stroke="#239B56" stroke-width="2.5" marker-end="url(#la-green)"></path>
+
+<!-- PREVIOUS MEMORY PATH -->
+<path d="M215 605 H1050 Q1080 605 1080 716" fill="none" stroke="#884EA0" stroke-width="2.5" marker-end="url(#la-purple)"></path>
+
+<!-- NEW CELL STATE -->
+<rect x="1170" y="710" width="165" height="90" rx="12" fill="#E8DAEF" stroke="#884EA0" stroke-width="2.5"></rect>
+<text x="1252" y="748" text-anchor="middle" font-size="20" font-weight="bold">New Memory</text>
+<text x="1252" y="778" text-anchor="middle" font-size="20">Cₜ</text>
+<path d="M1115 755 H1165" fill="none" stroke="#884EA0" stroke-width="2.5" marker-end="url(#la-purple)"></path>
+
+<!-- TANH -->
+<rect x="1400" y="710" width="140" height="90" rx="12" fill="#FCF3CF" stroke="#B7950B" stroke-width="2.5"></rect>
+<text x="1470" y="748" text-anchor="middle" font-size="20" font-weight="bold">Tanh</text>
+<text x="1470" y="778" text-anchor="middle" font-size="20">(Cₜ)</text>
+<path d="M1335 755 H1395" fill="none" stroke="#B7950B" stroke-width="2.5" marker-end="url(#la-yellow)"></path>
+
+<!-- OUTPUT MULTIPLICATION -->
+<circle cx="1620" cy="755" r="32" fill="#FDEDEC" stroke="#C0392B" stroke-width="2.5"></circle>
+<text x="1620" y="765" text-anchor="middle" font-size="30" font-weight="bold">×</text>
+<path d="M1540 755 H1584" fill="none" stroke="#B7950B" stroke-width="2.5" marker-end="url(#la-yellow)"></path>
+
+<!-- OUTPUT GATE PATH -->
+<path d="M1020 800 Q1320 940 1600 785" fill="none" stroke="#C0392B" stroke-width="2.5" marker-end="url(#la-red)"></path>
+
+<!-- FINAL HIDDEN STATE -->
+<rect x="1720" y="710" width="190" height="90" rx="12" fill="#D6EAF8" stroke="#2471A3" stroke-width="2.5"></rect>
+<text x="1815" y="748" text-anchor="middle" font-size="20" font-weight="bold">Hidden State</text>
+<text x="1815" y="778" text-anchor="middle" font-size="20">hₜ</text>
+<path d="M1652 755 H1715" fill="none" stroke="#2471A3" stroke-width="2.5" marker-end="url(#la-blue)"></path>
+
+<!-- GATE EXPLANATIONS -->
+<g text-anchor="middle" font-size="19" font-weight="bold">
+  <text x="595" y="1090" fill="#C0392B">Forget Gate</text>
+  <text x="595" y="1120" font-size="17" font-weight="normal" fill="#C0392B">What should we forget?</text>
+
+  <text x="850" y="1090" fill="#239B56">Input Gate</text>
+  <text x="850" y="1120" font-size="17" font-weight="normal" fill="#239B56">What should we remember?</text>
+
+  <text x="1210" y="1090" fill="#884EA0">Cell State</text>
+  <text x="1210" y="1120" font-size="17" font-weight="normal" fill="#884EA0">Updated long-term memory</text>
+
+  <text x="1640" y="1090" fill="#2471A3">Output Gate</text>
+  <text x="1640" y="1120" font-size="17" font-weight="normal" fill="#2471A3">What should we output?</text>
+</g>
+
+<!-- FOOTER -->
+<path d="M50 1160 H1950" stroke="#D5D8DC" stroke-width="1.5"></path>
+<text x="1000" y="1210" text-anchor="middle" font-size="23" font-weight="bold" fill="#34495E">LSTM maintains two states: Cell State (C) and Hidden State (h)</text>
+
+<!-- LEGEND -->
+<g font-size="17">
+  <rect x="450" y="1240" width="22" height="22" rx="4" fill="#D6EAF8" stroke="#2471A3" stroke-width="2"></rect>
+  <text x="480" y="1258">Input / Hidden</text>
+  <rect x="690" y="1240" width="22" height="22" rx="4" fill="#D5F5E3" stroke="#239B56" stroke-width="2"></rect>
+  <text x="720" y="1258">Input Gate</text>
+  <rect x="900" y="1240" width="22" height="22" rx="4" fill="#FCF3CF" stroke="#B7950B" stroke-width="2"></rect>
+  <text x="930" y="1258">Candidate / Tanh</text>
+  <rect x="1190" y="1240" width="22" height="22" rx="4" fill="#FADBD8" stroke="#C0392B" stroke-width="2"></rect>
+  <text x="1220" y="1258">Forget / Output Gate</text>
+  <rect x="1540" y="1240" width="22" height="22" rx="4" fill="#E8DAEF" stroke="#884EA0" stroke-width="2"></rect>
+  <text x="1570" y="1258">Cell State</text>
+</g>
+
+</svg>

@@ -1,0 +1,135 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
+<defs>
+  <marker id="blueArrow" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto">
+    <path d="M0 0 L8 4 L0 8 Z" fill="#2471A3"></path>
+  </marker>
+  <marker id="redArrow" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto">
+    <path d="M0 0 L8 4 L0 8 Z" fill="#C0392B"></path>
+  </marker>
+  <marker id="grayArrow" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto">
+    <path d="M0 0 L8 4 L0 8 Z" fill="#777777"></path>
+  </marker>
+  <style>
+    .label{font:bold 15px Arial,sans-serif;fill:#263238;text-anchor:middle}
+    .small{font:13px Arial,sans-serif;fill:#566573;text-anchor:middle}
+    .title{font:bold 26px Arial,sans-serif;fill:#243447;text-anchor:middle}
+    .blue{fill:none;stroke:#2471A3;stroke-width:2;marker-end:url(#blueArrow)}
+    .red{fill:none;stroke:#C0392B;stroke-width:2;marker-end:url(#redArrow)}
+    .gray{fill:none;stroke:#777777;stroke-width:1.5;marker-end:url(#grayArrow)}
+    .b{fill:#D6EAF8;stroke:#2471A3;stroke-width:1.7}
+    .r{fill:#FADBD8;stroke:#C0392B;stroke-width:1.7}
+  </style>
+</defs>
+
+<rect width="1200" height="760" rx="16" fill="#FFFFFF"></rect>
+
+<!-- Title -->
+<text x="600" y="42" class="title">Bidirectional LSTM (BiLSTM)</text>
+
+<!-- Input -->
+<text x="70" y="119" class="label">Input</text>
+
+<g>
+  <rect x="220" y="85" width="115" height="55" rx="9" fill="#EAF2F8" stroke="#2874A6" stroke-width="1.7"></rect>
+  <rect x="390" y="85" width="115" height="55" rx="9" fill="#EAF2F8" stroke="#2874A6" stroke-width="1.7"></rect>
+  <rect x="560" y="85" width="115" height="55" rx="9" fill="#EAF2F8" stroke="#2874A6" stroke-width="1.7"></rect>
+  <rect x="730" y="85" width="115" height="55" rx="9" fill="#EAF2F8" stroke="#2874A6" stroke-width="1.7"></rect>
+  <text x="277" y="119" class="label">I</text>
+  <text x="447" y="119" class="label">love</text>
+  <text x="617" y="119" class="label">deep</text>
+  <text x="787" y="119" class="label">learning</text>
+</g>
+
+<!-- Forward direction -->
+<text x="75" y="253" font-family="Arial" font-size="16" font-weight="bold" fill="#2471A3" text-anchor="middle">Forward</text>
+<text x="75" y="274" font-family="Arial" font-size="16" font-weight="bold" fill="#2471A3" text-anchor="middle">LSTM</text>
+
+<text x="600" y="177" class="small" fill="#2471A3">Forward: First token → Last token</text>
+
+<g>
+  <rect x="220" y="205" width="115" height="70" rx="10" class="b"></rect>
+  <rect x="390" y="205" width="115" height="70" rx="10" class="b"></rect>
+  <rect x="560" y="205" width="115" height="70" rx="10" class="b"></rect>
+  <rect x="730" y="205" width="115" height="70" rx="10" class="b"></rect>
+  <text x="277" y="246" class="label">LSTM Cell</text>
+  <text x="447" y="246" class="label">LSTM Cell</text>
+  <text x="617" y="246" class="label">LSTM Cell</text>
+  <text x="787" y="246" class="label">LSTM Cell</text>
+</g>
+
+<path d="M335 240 H385" class="blue"></path>
+<path d="M505 240 H555" class="blue"></path>
+<path d="M675 240 H725" class="blue"></path>
+
+<!-- Backward direction -->
+<text x="75" y="430" font-family="Arial" font-size="16" font-weight="bold" fill="#C0392B" text-anchor="middle">Backward</text>
+<text x="75" y="451" font-family="Arial" font-size="16" font-weight="bold" fill="#C0392B" text-anchor="middle">LSTM</text>
+
+<text x="600" y="345" class="small" fill="#C0392B">Backward: Last token → First token</text>
+
+<g>
+  <rect x="220" y="375" width="115" height="70" rx="10" class="r"></rect>
+  <rect x="390" y="375" width="115" height="70" rx="10" class="r"></rect>
+  <rect x="560" y="375" width="115" height="70" rx="10" class="r"></rect>
+  <rect x="730" y="375" width="115" height="70" rx="10" class="r"></rect>
+  <text x="277" y="416" class="label">LSTM Cell</text>
+  <text x="447" y="416" class="label">LSTM Cell</text>
+  <text x="617" y="416" class="label">LSTM Cell</text>
+  <text x="787" y="416" class="label">LSTM Cell</text>
+</g>
+
+<path d="M730 410 H680" class="red"></path>
+<path d="M560 410 H510" class="red"></path>
+<path d="M390 410 H340" class="red"></path>
+
+<!-- Input connections -->
+<path d="M277 140 V200" class="gray"></path>
+<path d="M447 140 V200" class="gray"></path>
+<path d="M617 140 V200" class="gray"></path>
+<path d="M787 140 V200" class="gray"></path>
+
+<path d="M277 375 V280" class="gray"></path>
+<path d="M447 375 V280" class="gray"></path>
+<path d="M617 375 V280" class="gray"></path>
+<path d="M787 375 V280" class="gray"></path>
+
+<!-- Forward state -->
+<rect x="920" y="205" width="170" height="70" rx="11" class="b"></rect>
+<text x="1005" y="234" class="label">Forward State</text>
+<text x="1005" y="257" class="small">64 Units</text>
+<path d="M845 240 H915" class="blue"></path>
+
+<!-- Backward state -->
+<rect x="920" y="375" width="170" height="70" rx="11" class="r"></rect>
+<text x="1005" y="404" class="label">Backward State</text>
+<text x="1005" y="427" class="small">64 Units</text>
+<path d="M335 410 H875 V410 H915" class="red"></path>
+
+<!-- Concatenation -->
+<rect x="920" y="490" width="170" height="70" rx="11" fill="#FCF3CF" stroke="#B7950B" stroke-width="1.8"></rect>
+<text x="1005" y="518" class="label">Concatenate</text>
+<text x="1005" y="541" class="small">128 Units</text>
+<path d="M1005 275 V485" class="blue"></path>
+<path d="M1005 445 V485" class="red"></path>
+
+<!-- Classification -->
+<rect x="920" y="610" width="170" height="50" rx="10" fill="#EAECEE" stroke="#566573" stroke-width="1.7"></rect>
+<text x="1005" y="641" class="label">Dropout 0.2</text>
+
+<rect x="665" y="610" width="170" height="50" rx="10" fill="#E8DAEF" stroke="#884EA0" stroke-width="1.7"></rect>
+<text x="750" y="632" class="label">Dense 16</text>
+<text x="750" y="650" class="small">ReLU</text>
+
+<rect x="410" y="610" width="170" height="50" rx="10" fill="#D5F5E3" stroke="#239B56" stroke-width="1.7"></rect>
+<text x="495" y="632" class="label">Output</text>
+<text x="495" y="650" class="small">Sigmoid</text>
+
+<path d="M1005 560 V605" class="gray"></path>
+<path d="M920 635 H840" class="gray"></path>
+<path d="M665 635 H585" class="gray"></path>
+
+<!-- Footer -->
+<text x="600" y="710" class="small">Both directions process the same sequence in opposite directions.</text>
+<text x="600" y="735" font-family="Arial" font-size="12" fill="#85929E" text-anchor="middle">Bidirectional LSTM Architecture</text>
+</svg>
